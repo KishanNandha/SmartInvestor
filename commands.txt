@@ -1,0 +1,7 @@
+***********anaconda***********
+conda create --name si python=3.7
+
+conda activate si
+conda deactivate
+
+conda install --file requirements.txt
