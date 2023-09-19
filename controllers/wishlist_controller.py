@@ -1,7 +1,7 @@
 # app/controllers/wishlist_controller.py
 from sqlalchemy.orm import Session
-from app.models.wishlist import Wishlist
-from app.schemas import WishlistCreate
+from models.wishlist import Wishlist
+from schemas.wishlist import WishlistCreate
 
 
 def create_wishlist(db: Session, wishlist: WishlistCreate):

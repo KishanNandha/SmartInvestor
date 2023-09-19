@@ -1,14 +1,18 @@
 # app/main.py
 from fastapi import FastAPI
-from app.routes import wishlist_routes, wishlist_values_routes
-from app.database import init_db
-
+from config.database import SessionLocal, engine, init_db, Base
+from models import wishlist_values, wishlist
+from routes import wishlist_routes, wishlist_values_routes
+init_db()
 app = FastAPI()
 
 app.include_router(wishlist_routes.router)
 app.include_router(wishlist_values_routes.router)
 
-if __name__ == "__main__":
-    init_db()
-    import uvicorn
-    uvicorn.run(app, host="0.0.0.0", port=8000)
+
+# GET operation at route '/'
+@app.get('/')
+def root_api():
+    return {"message": "Welcome to SmartInvestor"}
+
+Base.metadata.create_all(bind=engine)

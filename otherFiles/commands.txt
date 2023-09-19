@@ -5,3 +5,9 @@ conda activate si
 conda deactivate
 
 conda install --file requirements.txt
+
+
+uvicorn main:app --reload
+
+
+pip install -r requirements.txt
