@@ -4,6 +4,7 @@ conda create --name si python=3.7
 conda activate si
 conda deactivate
 
+-- not used use pip
 conda install --file requirements.txt
 
 
@@ -11,3 +12,10 @@ uvicorn main:app --reload
 
 
 pip install -r requirements.txt
+
+pip install nsepy
+
+
+
+yfinance
+yahoofinancials

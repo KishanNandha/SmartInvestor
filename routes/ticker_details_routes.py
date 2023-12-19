@@ -1,12 +1,11 @@
 # routes/wishlist_routes.py
 from fastapi import APIRouter, Depends
-from sqlalchemy.orm import Session
-from config.database import init_db
-from controllers.ticker_details_controller import get_ticker_details_controller
+
+from controllers.ticker_details_controller import getTickerTimeSeries
 
 router = APIRouter()
 
-@router.get("/ticker/details/{ticker_name}")
-def get_ticker_details(ticker_name: str, db: Session = Depends(init_db)):
-    ticker_details = get_ticker_details_controller(db, ticker_name)
-    return ticker_details
+@router.get("/si/ticker/timeseries/{symbol}/{start_date}/{end_date}")
+def get_ticker_details(symbol: str, start_date: str, end_date: str):
+
+    return getTickerTimeSeries(symbol, start_date, end_date)

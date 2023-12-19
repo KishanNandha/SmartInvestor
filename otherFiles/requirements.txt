@@ -1,11 +1,4 @@
 fastapi
 uvicorn[standard]
-SQLAlchemy==1.4.42
-mysqlclient
-pydantic==1.10.2
 fastapi-utils
-pymysql
 yfinance
-matplotlib
-beautifulsoup4
-yahoofinancials
